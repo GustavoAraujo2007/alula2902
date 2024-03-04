@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url('.//assets/6034768.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.box {
+    width: 400px ;
+    height: 450px;
+    background: transparent;
+    display: grid;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    color: #ffffff;
+}
+
+input {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    width: 250px;
+    height: 70%;
+    font-size: 15px;
+}
+
+.input1 input {
+    display: flex;
+}
+
+.input1 {
+    height: 52%;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.input2 input {
+    display: flex;
+}
+
+.input2 {
+    height: 52%;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.button {
+    height: 0%;
+}
+
+.button button {
+    position: absolute;
+    padding: 0;
+    height: 3%;
+    font-size: 10px;
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+    color: #ffffff;
+}
+
+.button1 {
+    display: grid;
+}
+
+.button1 button {
+    color: aliceblue;
+    position: absolute;
+    height: 6%;
+    width: 254px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(60deg, rgba(13, 238, 126, 0.767) 0%, rgba(10, 92, 243, 0.466) 35%, rgba(106, 190, 11, 0.719) 100%);
+}
+
+label {
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+    .box {
+        width: 300px; /* Altera a largura da caixa */
+    }
+
+    input {
+        width: 200px; /* Altera a largura dos campos de entrada */
+    }
+
+    .button1 button {
+        width: 200px; /* Altera a largura do botão */
+    }
+}
