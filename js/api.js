@@ -17,7 +17,6 @@ var pokeName, // Nome ou numero passado na caixa de busca
 function getElement(element) {
   return document.querySelector(element);
 }
-
 // Função responsavel por fazer requisições para a API e inserir as respostas na variavel pokemon
 function requestPokeInfo(url, name) {
   fetch(url + name)
