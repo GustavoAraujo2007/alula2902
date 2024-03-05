@@ -1,23 +1,21 @@
-// API endpoint --------------------------------------------
+
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
-// Get Elements --------------------------------------------
+
 const searchInput = getElement('.search-input'),
       searchButton = getElement('.search-button'),
       container = getElement('.pokemon'),
       erroMessage = getElement('.error');
 
-var pokeName, // Nome ou numero passado na caixa de busca
-    pokemon, // Responsavel por guardar os dados recebidos da API
-    card; // Responsavel por receber o HTML 
+var pokeName, 
+    pokemon, 
+    card; 
 
-// Build Functions --------------------------------------------
 
-// Função para reduzir a escrita na captura de elementos HTML
 function getElement(element) {
   return document.querySelector(element);
 }
-// Função responsavel por fazer requisições para a API e inserir as respostas na variavel pokemon
+
 function requestPokeInfo(url, name) {
   fetch(url + name)
     .then(response => response.json())
@@ -27,7 +25,7 @@ function requestPokeInfo(url, name) {
     .catch(err => console.log(err));
 }
 
-// Função responsavel por montar o HTML exibido na pagina
+
 function createCard () {
   card = `
     <div class="pokemon-picture">
@@ -44,12 +42,11 @@ function createCard () {
   return card;
 }
 
-// Função que faz a chamada das principais funções e inicia o app
 function startApp(pokeName) {
   requestPokeInfo(baseUrl, pokeName);
 
   setTimeout(function () {
-    //Exibe uma mensagem caso o pokemon pesquisado não exista
+ 
     if(pokemon.detail) {
       erroMessage.style.display = 'block';
       container.style.display = 'none';
@@ -61,14 +58,13 @@ function startApp(pokeName) {
   }, 2000);
 }
 
-// Add Events --------------------------------------------
 searchButton.addEventListener('click', event => {
   event.preventDefault();
   pokeName = searchInput.value.toLowerCase();
   startApp(pokeName);
   container.classList.add('fade');
 
-  // Reseta o efeito fade removendo a classe fade
+
   setTimeout(() => {
     container.classList.remove('fade');
   }, 3000);
